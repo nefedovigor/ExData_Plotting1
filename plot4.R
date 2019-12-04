@@ -26,25 +26,25 @@ df_uci <- df_uci %>%
 png(filename = "plot4.png")
 
 ## defines margins and plot postioning
-par(mfrow = c(2, 2), mar = c(4, 4, 4, 4), oma = c(1, 1, 1, 1))
+par(mfrow = c(2, 2), mar = c(4, 4, 4, 4), oma = c(0, 1, 0, 1))
 
 ## 1st plot
-with(df_uci_1, plot(Global_active_power ~ date_time, type = "l", 
+with(df_uci, plot(Global_active_power ~ date_time, type = "l", 
                     ylab = "Global Active Power (kilowatts)", xlab =""))
 
 ## 2nd plot
-with(df_uci_1, plot(Voltage ~ date_time, type = "l", 
+with(df_uci, plot(Voltage ~ date_time, type = "l", 
                     ylab = "Voltage", xlab =""))
 
 ## 3rd plot
-with(df_uci_1, plot(Sub_metering_1 ~ date_time, type = "l",
+with(df_uci, plot(Sub_metering_1 ~ date_time, type = "l",
                     ylab = "Energy sub metering", xlab =""))
 lines(df_uci$Sub_metering_2 ~ df_uci$date_time, type = "l", col = "red")
 lines(df_uci$Sub_metering_3 ~ df_uci$date_time, type = "l", col = "blue")
 legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
-       col = c("black", "red", "blue"), lty = 1, cex = 0.6, bty = "n", xjust = 1)
+       col = c("black", "red", "blue"), lty = 1, cex = 0.6, bty = "n")
 
 ## 4th plot
-with(df_uci_1, plot(Global_reactive_power ~ date_time, type = "l", 
+with(df_uci, plot(Global_reactive_power ~ date_time, type = "l", 
                     ylab = "Voltage", xlab =""))
 dev.off()
