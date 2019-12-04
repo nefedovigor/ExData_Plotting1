@@ -24,7 +24,7 @@ df_uci <- df_uci %>%
 
 ## plot functions
 png(filename = "plot3.png")
-with(df_uci_1, plot(Sub_metering_1 ~ date_time, type = "l",
+with(df_uci, plot(Sub_metering_1 ~ date_time, type = "l",
                     ylab = "Energy sub metering", xlab =""))
 lines(df_uci$Sub_metering_2 ~ df_uci$date_time, type = "l", col = "red")
 lines(df_uci$Sub_metering_3 ~ df_uci$date_time, type = "l", col = "blue")

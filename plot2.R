@@ -24,7 +24,7 @@ df_uci <- df_uci %>%
 
 ## plot functions
 png(filename = "plot2.png")
-with(df_uci_1, plot(Global_active_power ~ date_time, type = "l", 
+with(df_uci, plot(Global_active_power ~ date_time, type = "l", 
                     ylab = "Global Active Power (kilowatts)", xlab =""))
 dev.off()
 
